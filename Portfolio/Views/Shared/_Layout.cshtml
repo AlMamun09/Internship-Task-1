@@ -1,0 +1,86 @@
+﻿@*
+    Portfolio Layout - Modern Design
+    Author: Abdullah Al Mamun
+*@
+@{
+    // Get the current controller and action to determine the active page
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdullah Al Mamun</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Portfolio.styles.css" asp-append-version="true" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img src="~/Image/logo.png" alt="Logo" width="35" height="35" />
+                    Abdullah Al Mamun
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav d-flex align-items-center">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mx-2 @(currentAction == "Index" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mx-2 @(currentAction == "Education" ? "active" : "")" asp-controller="Home" asp-action="Education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mx-2 @(currentAction == "Skills" ? "active" : "")" asp-controller="Home" asp-action="Skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mx-2 @(currentAction == "Projects" ? "active" : "")" asp-controller="Home" asp-action="Projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mx-2 @(currentAction == "Contact" ? "active" : "")" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container flex-fill">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2025 - <strong>Abdullah Al Mamun</strong> |
+                <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

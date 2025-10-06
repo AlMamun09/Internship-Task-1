@@ -1,0 +1,52 @@
+﻿/* _Layout.cshtml.css */
+
+/* --- Navbar Styling --- */
+.navbar {
+    /* Glass Effect: semi-transparent gradient and a blur */
+    background: linear-gradient(90deg, rgba(0, 123, 255, 0.85), rgba(102, 16, 242, 0.85));
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0; /* More vertical space */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Brand/Logo Styling --- */
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.25); /* Add depth to text */
+    transition: transform 0.3s ease;
+}
+
+    .navbar-brand:hover {
+        transform: scale(1.02); /* Subtle zoom on hover */
+    }
+
+    .navbar-brand img {
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+
+/* --- Navigation Button Styling --- */
+.navbar .btn {
+    min-width: 100px; /* Uniform button width */
+    font-weight: 500;
+    border-width: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .navbar .btn:hover {
+        transform: translateY(-2px); /* Lift button on hover */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Make the active button stand out more */
+    .navbar .btn.active {
+        background-color: #fff !important;
+        color: #6610f2 !important; /* Use a color from your gradient */
+        border-color: #fff !important;
+        transform: scale(1.05);
+    }

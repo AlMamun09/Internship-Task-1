@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using Expense_Tracker.Models;
+using Portfolio.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Expense_Tracker.Controllers
+namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
